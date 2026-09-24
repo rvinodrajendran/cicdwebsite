@@ -1,953 +1,1031 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vinod Rajendran | DevOps & Cloud Engineer</title>
+```
+<title>Vinod Rajendran — DevOps & Cloud Engineer</title>
 
-    <meta
-        name="description"
-        content="Vinod Rajendran — DevOps & Cloud Engineer building automated infrastructure, containerized applications and Kubernetes platforms."
-    >
+<meta
+    name="description"
+    content="Vinod Rajendran — DevOps & Cloud Engineer building cloud infrastructure, containers, Kubernetes platforms and automation."
+>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
+<div class="cursor-glow"></div>
 
-    <nav class="navbar">
+<div class="page-loader">
+    <div class="loader-mark">VR<span>.</span></div>
+</div>
 
-        <a href="#home" class="logo">
-            VR<span style="color:#b8ff00;">.</span>
-        </a>
+<header class="site-header">
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Stack</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#journey">Journey</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+```
+<a href="#home" class="brand">
+    <span class="brand-mark">VR</span>
+    <span class="brand-line"></span>
+    <span class="brand-label">DEVOPS / CLOUD</span>
+</a>
 
-    </nav>
+<nav class="main-nav">
+    <a href="#about">About</a>
+    <a href="#stack">Stack</a>
+    <a href="#projects">Projects</a>
+    <a href="#journey">Journey</a>
+</nav>
 
+<a href="#contact" class="header-contact">
+    Let's Talk
+    <span>↗</span>
+</a>
+```
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+</header>
 
-    <main>
+<main>
 
-        <section id="home" class="hero">
+```
+<!-- HERO -->
 
-            <div class="hero-content">
+<section id="home" class="hero">
 
-                <div class="availability">
-                    Building with AWS + Kubernetes
-                </div>
+    <div class="hero-grid"></div>
 
-                <p class="subtitle">
-                    DEVOPS & CLOUD ENGINEER
-                </p>
+    <div class="hero-content reveal">
 
-                <h1>
-                    I build
-                    <span>infrastructure</span>
-                    that runs.
-                </h1>
+        <div class="eyebrow">
+            <span class="status-dot"></span>
+            DEVOPS & CLOUD ENGINEER
+        </div>
 
-                <p>
-                    I'm Vinod Rajendran — a DevOps and Cloud Engineer
-                    focused on AWS, Kubernetes, Terraform, Docker,
-                    Linux and automation.
-                </p>
+        <h1>
+            BUILD.
+            <span>AUTOMATE.</span>
+            DEPLOY.
+        </h1>
 
-                <p>
-                    I learn by building real infrastructure:
-                    provisioning servers, automating deployments,
-                    containerizing applications and operating
-                    Kubernetes clusters from the ground up.
-                </p>
+        <div class="hero-bottom">
 
-                <div class="hero-buttons">
+            <p class="hero-description">
+                I build cloud infrastructure, containerized applications
+                and Kubernetes platforms — with a focus on automation,
+                reproducibility and understanding how systems work.
+            </p>
 
-                    <a href="#projects" class="btn btn-primary">
-                        Explore My Work
-                    </a>
+            <div class="hero-actions">
+                <a href="#projects" class="button button-primary">
+                    Explore Projects
+                    <span>↘</span>
+                </a>
 
-                    <a
-                        href="https://github.com/rvinodrajendran"
-                        target="_blank"
-                        class="btn"
-                    >
-                        GitHub ↗
-                    </a>
-
-                </div>
-
+                <a
+                    href="https://github.com/rvinodrajendran"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-outline"
+                >
+                    GitHub
+                    <span>↗</span>
+                </a>
             </div>
 
+        </div>
 
-            <!-- TERMINAL -->
+    </div>
 
-            <div class="hero-terminal">
 
-                <div class="terminal-header">
+    <!-- TECHNICAL HERO VISUAL -->
 
-                    <span class="terminal-dot"></span>
-                    <span class="terminal-dot"></span>
-                    <span class="terminal-dot"></span>
+    <div class="hero-visual reveal">
 
-                    <span style="margin-left:8px;">
-                        vinod@devops
-                    </span>
+        <div class="visual-label label-top">
+            SYSTEM / 001
+        </div>
 
-                </div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
 
-                <div class="terminal-body">
+        <div class="core-node">
+            <span>VR</span>
+        </div>
 
-                    <div>
-                        <span class="command">$ whoami</span>
-                    </div>
+        <div class="connection connection-one"></div>
+        <div class="connection connection-two"></div>
+        <div class="connection connection-three"></div>
+        <div class="connection connection-four"></div>
 
-                    <div class="success">
-                        vinod
-                    </div>
+        <div class="tech-node node-aws">
+            <small>CLOUD</small>
+            AWS
+        </div>
 
-                    <br>
+        <div class="tech-node node-k8s">
+            <small>ORCHESTRATION</small>
+            K8S
+        </div>
 
-                    <div>
-                        <span class="command">$ cat /skills</span>
-                    </div>
+        <div class="tech-node node-tf">
+            <small>INFRASTRUCTURE</small>
+            TF
+        </div>
 
-                    <div>
-                        AWS
-                    </div>
+        <div class="tech-node node-docker">
+            <small>CONTAINER</small>
+            DOCKER
+        </div>
 
-                    <div>
-                        Terraform
-                    </div>
+        <div class="visual-code">
+            <span>$</span> kubectl get nodes
+            <strong>3 Ready</strong>
+        </div>
 
-                    <div>
-                        Docker
-                    </div>
+        <div class="visual-label label-bottom">
+            INFRASTRUCTURE / ONLINE
+        </div>
 
-                    <div>
-                        Kubernetes
-                    </div>
+    </div>
 
-                    <div>
-                        Ansible
-                    </div>
 
-                    <div>
-                        Linux
-                    </div>
+    <div class="hero-scroll">
+        <span>SCROLL TO EXPLORE</span>
+        <div></div>
+    </div>
 
-                    <br>
+</section>
 
-                    <div>
-                        <span class="command">$ kubectl get nodes</span>
-                    </div>
 
-                    <div class="success">
-                        master1    Ready
-                    </div>
+<!-- MARQUEE -->
 
-                    <div class="success">
-                        client1    Ready
-                    </div>
+<section class="tech-marquee">
 
-                    <div class="success">
-                        client2    Ready
-                    </div>
+    <div class="marquee-track">
+        <span>AWS</span>
+        <i>✦</i>
+        <span>KUBERNETES</span>
+        <i>✦</i>
+        <span>TERRAFORM</span>
+        <i>✦</i>
+        <span>DOCKER</span>
+        <i>✦</i>
+        <span>ANSIBLE</span>
+        <i>✦</i>
+        <span>LINUX</span>
+        <i>✦</i>
+        <span>GITHUB</span>
+        <i>✦</i>
 
-                    <br>
+        <span>AWS</span>
+        <i>✦</i>
+        <span>KUBERNETES</span>
+        <i>✦</i>
+        <span>TERRAFORM</span>
+        <i>✦</i>
+        <span>DOCKER</span>
+        <i>✦</i>
+        <span>ANSIBLE</span>
+        <i>✦</i>
+        <span>LINUX</span>
+        <i>✦</i>
+        <span>GITHUB</span>
+        <i>✦</i>
+    </div>
 
-                    <div>
-                        <span class="command">$ status</span>
-                    </div>
+</section>
 
-                    <div class="success">
-                        infrastructure: operational
-                    </div>
 
-                </div>
+<!-- ABOUT -->
 
+<section id="about" class="section about-section">
+
+    <div class="section-index">01 / ABOUT</div>
+
+    <div class="about-layout">
+
+        <div class="section-heading reveal">
+
+            <span class="mini-label">THE APPROACH</span>
+
+            <h2>
+                I don't just use
+                <em>DevOps tools.</em>
+                I build the systems behind them.
+            </h2>
+
+        </div>
+
+        <div class="about-copy reveal">
+
+            <p class="lead">
+                My learning approach is simple:
+                <strong>build it, break it, understand it, automate it.</strong>
+            </p>
+
+            <p>
+                I work hands-on with AWS, Linux, Docker, Terraform,
+                Ansible and Kubernetes — creating infrastructure myself
+                instead of treating commands as black boxes.
+            </p>
+
+            <p>
+                From provisioning EC2 instances to building kubeadm
+                clusters and deploying applications with persistent
+                storage, each project helps me understand another layer
+                of the infrastructure stack.
+            </p>
+
+            <div class="about-signature">
+                <span>VINOD RAJENDRAN</span>
+                <span>DEVOPS / CLOUD</span>
             </div>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
 
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
+<!-- NUMBERS -->
 
-        <section id="about" class="section">
+<section class="numbers-section">
 
-            <div class="section-header">
+    <div class="number-card reveal">
+        <span class="number">03</span>
+        <span class="number-label">KUBERNETES<br>NODES</span>
+    </div>
 
-                <p class="subtitle">
-                    ABOUT ME
-                </p>
+    <div class="number-card reveal">
+        <span class="number">08+</span>
+        <span class="number-label">CORE DEVOPS<br>TECHNOLOGIES</span>
+    </div>
 
-                <h2>
-                    From servers to
-                    <span style="color:#b8ff00;">
-                        automation.
-                    </span>
-                </h2>
+    <div class="number-card reveal">
+        <span class="number">04+</span>
+        <span class="number-label">HANDS-ON<br>PROJECTS</span>
+    </div>
 
-                <p>
-                    My focus is not simply learning DevOps tools.
-                    I want to understand how infrastructure actually
-                    works and how those pieces connect together.
-                </p>
+    <div class="number-card reveal">
+        <span class="number">∞</span>
+        <span class="number-label">THINGS LEFT<br>TO AUTOMATE</span>
+    </div>
 
+</section>
+
+
+<!-- STACK -->
+
+<section id="stack" class="section stack-section">
+
+    <div class="section-index">02 / STACK</div>
+
+    <div class="section-intro reveal">
+
+        <span class="mini-label">THE TOOLBOX</span>
+
+        <h2>
+            Infrastructure is a
+            <em>system.</em>
+        </h2>
+
+        <p>
+            Each technology has a role. Together they form the
+            infrastructure layer behind modern applications.
+        </p>
+
+    </div>
+
+
+    <div class="stack-map">
+
+        <div class="stack-column stack-cloud reveal">
+
+            <span class="stack-number">01</span>
+
+            <div class="stack-title">
+                <small>CLOUD</small>
+                AWS
             </div>
 
+            <p>
+                EC2 · VPC · IAM · S3 · Security Groups
+            </p>
 
-            <div class="about-grid">
-
-                <div class="about-card">
-
-                    <h3>
-                        I learn by building
-                    </h3>
-
-                    <p>
-                        Instead of relying only on tutorials,
-                        I create my own environments and work
-                        through the infrastructure myself.
-                    </p>
-
-                    <p>
-                        EC2 instances become Kubernetes nodes.
-                        Docker containers become applications.
-                        Terraform becomes infrastructure.
-                        Ansible becomes automation.
-                    </p>
-
-                </div>
+        </div>
 
 
-                <div class="about-card">
+        <div class="stack-line"></div>
 
-                    <h3>
-                        What I care about
-                    </h3>
 
-                    <p>
-                        Reproducibility, automation, infrastructure
-                        as code, containerization, Linux and
-                        understanding what happens underneath
-                        the commands.
-                    </p>
+        <div class="stack-column reveal">
 
-                    <p>
-                        Every project is an opportunity to turn
-                        a manual process into something repeatable.
-                    </p>
+            <span class="stack-number">02</span>
 
-                </div>
-
+            <div class="stack-title">
+                <small>INFRASTRUCTURE AS CODE</small>
+                TERRAFORM
             </div>
 
-        </section>
+            <p>
+                Repeatable infrastructure provisioning
+                and cloud resource management.
+            </p>
+
+        </div>
 
 
-        <!-- =====================================================
-             STATS
-        ====================================================== -->
-
-        <section class="section">
-
-            <div class="stats-container">
-
-                <div class="stat-card">
-
-                    <strong>03</strong>
-
-                    <span>
-                        Kubernetes Nodes
-                    </span>
-
-                </div>
+        <div class="stack-line"></div>
 
 
-                <div class="stat-card">
+        <div class="stack-column reveal">
 
-                    <strong>08+</strong>
+            <span class="stack-number">03</span>
 
-                    <span>
-                        DevOps Technologies
-                    </span>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <strong>100%</strong>
-
-                    <span>
-                        Hands-on Learning
-                    </span>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <strong>∞</strong>
-
-                    <span>
-                        Things Left to Automate
-                    </span>
-
-                </div>
-
+            <div class="stack-title">
+                <small>AUTOMATION</small>
+                ANSIBLE
             </div>
 
-        </section>
+            <p>
+                Server configuration, cluster preparation
+                and repeatable operational tasks.
+            </p>
+
+        </div>
 
 
-        <!-- =====================================================
-             TECHNOLOGY STACK
-        ====================================================== -->
+        <div class="stack-line"></div>
 
-        <section id="skills" class="section">
 
-            <div class="section-header">
+        <div class="stack-column reveal">
 
-                <p class="subtitle">
-                    TECHNOLOGY STACK
-                </p>
+            <span class="stack-number">04</span>
 
-                <h2>
-                    Tools I use to
-                    <span style="color:#b8ff00;">
-                        build infrastructure.
-                    </span>
-                </h2>
-
+            <div class="stack-title">
+                <small>CONTAINERS</small>
+                DOCKER
             </div>
 
+            <p>
+                Application packaging, networking,
+                volumes and containerized services.
+            </p>
 
-            <div class="skills-grid">
-
-
-                <div class="skill-card">
-
-                    <h3>
-                        ☁ AWS
-                    </h3>
-
-                    <p>
-                        Cloud infrastructure and compute.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">EC2</span>
-                        <span class="skill-tag">VPC</span>
-                        <span class="skill-tag">IAM</span>
-                        <span class="skill-tag">S3</span>
-                        <span class="skill-tag">Security Groups</span>
-                    </div>
-
-                </div>
+        </div>
 
 
-                <div class="skill-card">
-
-                    <h3>
-                        ◈ Kubernetes
-                    </h3>
-
-                    <p>
-                        Container orchestration and
-                        application deployment.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">kubeadm</span>
-                        <span class="skill-tag">Pods</span>
-                        <span class="skill-tag">Deployments</span>
-                        <span class="skill-tag">Services</span>
-                    </div>
-
-                </div>
+        <div class="stack-line"></div>
 
 
-                <div class="skill-card">
+        <div class="stack-column stack-k8s reveal">
 
-                    <h3>
-                        ◫ Infrastructure as Code
-                    </h3>
+            <span class="stack-number">05</span>
 
-                    <p>
-                        Creating infrastructure in a
-                        repeatable and automated way.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Terraform</span>
-                        <span class="skill-tag">Ansible</span>
-                        <span class="skill-tag">YAML</span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h3>
-                        ◉ Containers
-                    </h3>
-
-                    <p>
-                        Building and running
-                        containerized applications.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Docker Compose</span>
-                        <span class="skill-tag">containerd</span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h3>
-                        ◇ Linux
-                    </h3>
-
-                    <p>
-                        Working directly with Linux servers,
-                        networking and system configuration.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Ubuntu</span>
-                        <span class="skill-tag">Bash</span>
-                        <span class="skill-tag">SSH</span>
-                        <span class="skill-tag">Networking</span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h3>
-                        ⌘ Git & GitHub
-                    </h3>
-
-                    <p>
-                        Version control and infrastructure
-                        project management.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">SSH</span>
-                        <span class="skill-tag">CI/CD</span>
-                    </div>
-
-                </div>
-
+            <div class="stack-title">
+                <small>ORCHESTRATION</small>
+                KUBERNETES
             </div>
 
-        </section>
+            <p>
+                kubeadm · Pods · Deployments · Services ·
+                PV/PVC · Flannel
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-        <!-- =====================================================
-             PROJECTS
-        ====================================================== -->
+<!-- STATEMENT -->
 
-        <section id="projects" class="section">
+<section class="statement-section">
 
-            <div class="section-header">
+    <div class="statement-grid"></div>
 
-                <p class="subtitle">
-                    SELECTED PROJECTS
-                </p>
+    <div class="statement-content reveal">
 
-                <h2>
-                    Things I've
-                    <span style="color:#b8ff00;">
-                        actually built.
-                    </span>
-                </h2>
+        <span class="mini-label">ENGINEERING MINDSET</span>
 
-                <p>
-                    These projects represent my approach:
-                    build the infrastructure, break it,
-                    understand it, automate it and build it again.
-                </p>
+        <h2>
+            LESS
+            <span>MANUAL.</span>
+            MORE
+            <span>REPEATABLE.</span>
+        </h2>
 
-            </div>
+        <p>
+            The goal isn't to collect tools.
+            It's to turn infrastructure into something
+            predictable, reproducible and automated.
+        </p>
 
+    </div>
 
-            <div class="projects-grid">
+</section>
 
 
-                <!-- PROJECT 1 -->
+<!-- PROJECTS -->
 
-                <div class="project-card">
+<section id="projects" class="section projects-section">
 
-                    <h3>
-                        Kubernetes WordPress Platform
-                    </h3>
+    <div class="section-index">03 / PROJECTS</div>
 
-                    <p>
-                        Deployed WordPress and MySQL on a
-                        self-managed Kubernetes cluster with
-                        persistent storage and NodePort access.
-                    </p>
+    <div class="section-intro reveal">
 
-                    <div>
+        <span class="mini-label">SELECTED WORK</span>
 
-                        <span class="tech-tag">Kubernetes</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">WordPress</span>
-                        <span class="tech-tag">PV/PVC</span>
+        <h2>
+            Built in the
+            <em>real world.</em>
+        </h2>
 
-                    </div>
+        <p>
+            Hands-on infrastructure projects where the objective
+            was to understand the system, not simply deploy it.
+        </p>
 
-                    <br>
+    </div>
 
-                    <a
-                        href="https://github.com/rvinodrajendran/wordpress-k8"
-                        target="_blank"
-                    >
-                        View project on GitHub →
-                    </a>
 
+    <div class="projects-list">
+
+
+        <!-- PROJECT 01 -->
+
+        <article class="project reveal">
+
+            <div class="project-number">01</div>
+
+            <div class="project-main">
+
+                <div class="project-meta">
+                    KUBERNETES / WORDPRESS / MYSQL
                 </div>
-
-
-                <!-- PROJECT 2 -->
-
-                <div class="project-card">
-
-                    <h3>
-                        Automated Kubernetes Cluster
-                    </h3>
-
-                    <p>
-                        Automated the creation of a kubeadm-based
-                        Kubernetes cluster across a control-plane
-                        node and worker nodes using Ansible.
-                    </p>
-
-                    <div>
-
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">Ansible</span>
-                        <span class="tech-tag">kubeadm</span>
-                        <span class="tech-tag">Flannel</span>
-
-                    </div>
-
-                    <br>
-
-                    <a
-                        href="https://github.com/rvinodrajendran"
-                        target="_blank"
-                    >
-                        Explore my GitHub →
-                    </a>
-
-                </div>
-
-
-                <!-- PROJECT 3 -->
-
-                <div class="project-card">
-
-                    <h3>
-                        Terraform AWS Infrastructure
-                    </h3>
-
-                    <p>
-                        Provisioned AWS infrastructure using
-                        Terraform to replace repetitive manual
-                        cloud setup with infrastructure as code.
-                    </p>
-
-                    <div>
-
-                        <span class="tech-tag">Terraform</span>
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">EC2</span>
-                        <span class="tech-tag">VPC</span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 4 -->
-
-                <div class="project-card">
-
-                    <h3>
-                        Containerized Applications
-                    </h3>
-
-                    <p>
-                        Built and deployed applications using
-                        Docker and Docker Compose while learning
-                        how containers, networks, volumes and
-                        services work together.
-                    </p>
-
-                    <div>
-
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Compose</span>
-                        <span class="tech-tag">Linux</span>
-                        <span class="tech-tag">Git</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             ARCHITECTURE
-        ====================================================== -->
-
-        <section class="section">
-
-            <div class="section-header">
-
-                <p class="subtitle">
-                    HOW I THINK ABOUT INFRASTRUCTURE
-                </p>
-
-                <h2>
-                    From code to
-                    <span style="color:#b8ff00;">
-                        running application.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="architecture">
-
-<pre>
-Developer
-    │
-    ▼
-GitHub
-    │
-    ▼
-CI / CD
-    │
-    ▼
-Docker Image
-    │
-    ▼
-Container Registry
-    │
-    ▼
-Kubernetes
-    │
-    ├── Control Plane
-    │
-    ├── Worker Node
-    │
-    └── Worker Node
-            │
-            ▼
-      Running Application
-</pre>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             JOURNEY
-        ====================================================== -->
-
-        <section id="journey" class="section">
-
-            <div class="section-header">
-
-                <p class="subtitle">
-                    MY DEVOPS JOURNEY
-                </p>
-
-                <h2>
-                    Learning by
-                    <span style="color:#b8ff00;">
-                        doing.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="timeline">
-
-
-                <div class="timeline-item">
-
-                    <h3>
-                        Linux & Servers
-                    </h3>
-
-                    <p>
-                        Started understanding Linux systems,
-                        SSH, processes, networking and server
-                        administration.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <h3>
-                        Docker
-                    </h3>
-
-                    <p>
-                        Learned how applications are packaged
-                        into containers and how containers
-                        communicate and persist data.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <h3>
-                        AWS
-                    </h3>
-
-                    <p>
-                        Started creating cloud infrastructure
-                        with EC2, networking, IAM and security
-                        controls.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <h3>
-                        Terraform & Ansible
-                    </h3>
-
-                    <p>
-                        Converted repetitive infrastructure
-                        tasks into code and automation.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <h3>
-                        Kubernetes
-                    </h3>
-
-                    <p>
-                        Built kubeadm clusters and learned how
-                        Pods, Deployments, Services, storage
-                        and networking work together.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <h3>
-                        CI/CD
-                    </h3>
-
-                    <p>
-                        Moving toward automated workflows where
-                        code changes can move from GitHub to
-                        a running environment with minimal
-                        manual intervention.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CURRENT FOCUS
-        ====================================================== -->
-
-        <section class="section">
-
-            <div class="about-card">
-
-                <p class="subtitle">
-                    CURRENT FOCUS
-                </p>
-
-                <h2>
-                    Automate the
-                    <span style="color:#b8ff00;">
-                        boring stuff.
-                    </span>
-                </h2>
-
-                <p>
-                    I'm currently focusing on bringing the pieces
-                    together: cloud infrastructure, containers,
-                    Kubernetes, GitHub and CI/CD.
-                </p>
-
-                <p>
-                    The goal is simple — fewer manual commands,
-                    more repeatable infrastructure and a better
-                    understanding of what happens at every stage.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
-
-        <section id="contact" class="section">
-
-            <div class="section-header">
-
-                <p class="subtitle">
-                    LET'S CONNECT
-                </p>
-
-                <h2>
-                    Have an infrastructure
-                    <span style="color:#b8ff00;">
-                        problem?
-                    </span>
-                </h2>
-
-                <p>
-                    I'm interested in DevOps, cloud infrastructure,
-                    automation, containers and Kubernetes.
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
 
                 <h3>
-                    Vinod Rajendran
+                    WordPress
+                    <span>on Kubernetes.</span>
                 </h3>
 
-                <p>
-                    DevOps & Cloud Engineer
+                <p class="project-description">
+                    Deployed WordPress and MySQL on a self-managed
+                    Kubernetes cluster with persistent storage,
+                    local volumes and NodePort access.
                 </p>
 
-                <br>
+                <div class="project-details">
 
-                <div class="hero-buttons">
+                    <div>
+                        <small>BUILT WITH</small>
+                        <p>
+                            Kubernetes · MySQL · WordPress · PV/PVC
+                        </p>
+                    </div>
 
-                    <a
-                        href="https://github.com/rvinodrajendran"
-                        target="_blank"
-                        class="btn btn-primary"
-                    >
-                        GitHub ↗
-                    </a>
+                    <div>
+                        <small>INFRASTRUCTURE</small>
+                        <p>
+                            kubeadm · containerd · Flannel · Linux
+                        </p>
+                    </div>
 
-                    <a
-                        href="https://www.linkedin.com/in/vinodrajendran/"
-                        target="_blank"
-                        class="btn"
-                    >
-                        LinkedIn ↗
-                    </a>
+                </div>
 
-                    <a
-                        href="mailto:hello@vinodrajendran.com"
-                        class="btn"
-                    >
-                        Email Me
-                    </a>
+                <a
+                    href="https://github.com/rvinodrajendran/wordpress-k8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    VIEW PROJECT
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+            <div class="project-visual wordpress-visual">
+                <div class="visual-window">
+
+                    <div class="window-top">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="window-content">
+                        <p><b>$</b> kubectl get pods</p>
+                        <p class="green">wordpress &nbsp; Running</p>
+                        <p class="green">mysql &nbsp;&nbsp;&nbsp;&nbsp; Running</p>
+                        <br>
+                        <p><b>$</b> kubectl get pvc</p>
+                        <p>mysql-pvc &nbsp;&nbsp;&nbsp; Bound</p>
+                        <p>wordpress-pvc &nbsp; Bound</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 02 -->
+
+        <article class="project project-reverse reveal">
+
+            <div class="project-number">02</div>
+
+            <div class="project-main">
+
+                <div class="project-meta">
+                    AWS / ANSIBLE / KUBEADM
+                </div>
+
+                <h3>
+                    Automated
+                    <span>Kubernetes Cluster.</span>
+                </h3>
+
+                <p class="project-description">
+                    Automated the preparation and configuration of
+                    a kubeadm-based Kubernetes cluster across a
+                    control-plane node and worker nodes.
+                </p>
+
+                <div class="project-details">
+
+                    <div>
+                        <small>AUTOMATION</small>
+                        <p>
+                            Ansible · Bash · SSH
+                        </p>
+                    </div>
+
+                    <div>
+                        <small>PLATFORM</small>
+                        <p>
+                            AWS EC2 · Ubuntu · containerd
+                        </p>
+                    </div>
+
+                </div>
+
+                <a
+                    href="https://github.com/rvinodrajendran"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    EXPLORE GITHUB
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+            <div class="project-visual cluster-visual">
+
+                <div class="cluster-diagram">
+
+                    <div class="cluster-node master">
+                        <small>CONTROL PLANE</small>
+                        MASTER
+                    </div>
+
+                    <div class="cluster-connector connector-a"></div>
+                    <div class="cluster-connector connector-b"></div>
+
+                    <div class="cluster-node worker-one">
+                        <small>WORKER</small>
+                        CLIENT 01
+                    </div>
+
+                    <div class="cluster-node worker-two">
+                        <small>WORKER</small>
+                        CLIENT 02
+                    </div>
 
                 </div>
 
             </div>
 
-        </section>
-
-    </main>
+        </article>
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+        <!-- PROJECT 03 -->
 
-    <footer>
+        <article class="project reveal">
+
+            <div class="project-number">03</div>
+
+            <div class="project-main">
+
+                <div class="project-meta">
+                    TERRAFORM / AWS / INFRASTRUCTURE
+                </div>
+
+                <h3>
+                    Infrastructure
+                    <span>as Code.</span>
+                </h3>
+
+                <p class="project-description">
+                    Built AWS infrastructure using Terraform,
+                    replacing repetitive manual cloud setup with
+                    declarative infrastructure definitions.
+                </p>
+
+                <div class="project-details">
+
+                    <div>
+                        <small>FOCUS</small>
+                        <p>
+                            EC2 · VPC · Networking
+                        </p>
+                    </div>
+
+                    <div>
+                        <small>APPROACH</small>
+                        <p>
+                            Declarative · Repeatable · Versioned
+                        </p>
+                    </div>
+
+                </div>
+
+                <a
+                    href="https://github.com/rvinodrajendran"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    EXPLORE GITHUB
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+            <div class="project-visual terraform-visual">
+
+                <div class="terraform-code">
+                    <span>resource</span>
+                    <b>"aws_instance"</b>
+                    <span>"server"</span>
+                    <br><br>
+                    &nbsp;&nbsp;ami = <i>"ubuntu"</i>
+                    <br>
+                    &nbsp;&nbsp;instance_type = <i>"t3.micro"</i>
+                    <br>
+                    &nbsp;&nbsp;tags = {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Name = <i>"devops"</i>
+                    <br>
+                    &nbsp;&nbsp;}
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 04 -->
+
+        <article class="project project-reverse reveal">
+
+            <div class="project-number">04</div>
+
+            <div class="project-main">
+
+                <div class="project-meta">
+                    DOCKER / COMPOSE / LINUX
+                </div>
+
+                <h3>
+                    Containerized
+                    <span>Applications.</span>
+                </h3>
+
+                <p class="project-description">
+                    Built and deployed applications with Docker
+                    and Docker Compose while learning how containers,
+                    networks, volumes and services work together.
+                </p>
+
+                <div class="project-details">
+
+                    <div>
+                        <small>TECHNOLOGY</small>
+                        <p>
+                            Docker · Compose · Linux
+                        </p>
+                    </div>
+
+                    <div>
+                        <small>WORKFLOW</small>
+                        <p>
+                            Build · Run · Connect · Persist
+                        </p>
+                    </div>
+
+                </div>
+
+                <a
+                    href="https://github.com/rvinodrajendran"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    EXPLORE GITHUB
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+            <div class="project-visual docker-visual">
+
+                <div class="docker-stack">
+                    <div>APPLICATION</div>
+                    <div>CONTAINER</div>
+                    <div>NETWORK</div>
+                    <div>VOLUME</div>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ARCHITECTURE -->
+
+<section class="architecture-section">
+
+    <div class="section-index">04 / ARCHITECTURE</div>
+
+    <div class="section-intro reveal">
+
+        <span class="mini-label">HOW THE PIECES CONNECT</span>
+
+        <h2>
+            From
+            <em>code</em>
+            to running application.
+        </h2>
+
+    </div>
+
+
+    <div class="architecture-flow reveal">
+
+        <div class="flow-node">
+            <small>01</small>
+            DEVELOPER
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-node">
+            <small>02</small>
+            GITHUB
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-node">
+            <small>03</small>
+            CI / CD
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-node">
+            <small>04</small>
+            DOCKER
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-node active">
+            <small>05</small>
+            KUBERNETES
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-node">
+            <small>06</small>
+            APPLICATION
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JOURNEY -->
+
+<section id="journey" class="section journey-section">
+
+    <div class="section-index">05 / JOURNEY</div>
+
+    <div class="journey-layout">
+
+        <div class="section-heading reveal">
+
+            <span class="mini-label">LEARNING PATH</span>
+
+            <h2>
+                Learning
+                <em>by doing.</em>
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+                <span class="timeline-number">01</span>
+
+                <div>
+                    <small>FOUNDATION</small>
+                    <h3>Linux & Servers</h3>
+                    <p>
+                        SSH, processes, networking, system
+                        administration and server fundamentals.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <span class="timeline-number">02</span>
+
+                <div>
+                    <small>CONTAINERS</small>
+                    <h3>Docker</h3>
+                    <p>
+                        Containers, images, networks, volumes
+                        and Docker Compose.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <span class="timeline-number">03</span>
+
+                <div>
+                    <small>CLOUD</small>
+                    <h3>AWS</h3>
+                    <p>
+                        EC2, VPC, IAM, security groups and
+                        cloud infrastructure.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <span class="timeline-number">04</span>
+
+                <div>
+                    <small>AUTOMATION</small>
+                    <h3>Terraform & Ansible</h3>
+                    <p>
+                        Turning repetitive infrastructure work
+                        into code and automation.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <span class="timeline-number">05</span>
+
+                <div>
+                    <small>ORCHESTRATION</small>
+                    <h3>Kubernetes</h3>
+                    <p>
+                        kubeadm clusters, Pods, Deployments,
+                        Services, storage and networking.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <span class="timeline-number">06</span>
+
+                <div>
+                    <small>NEXT LAYER</small>
+                    <h3>CI / CD</h3>
+                    <p>
+                        Connecting GitHub, infrastructure and
+                        deployment into repeatable workflows.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact-section">
+
+    <div class="contact-grid"></div>
+
+    <div class="contact-content reveal">
+
+        <span class="mini-label">06 / CONTACT</span>
+
+        <h2>
+            LET'S BUILD
+            <span>WHAT'S NEXT.</span>
+        </h2>
 
         <p>
-            <strong>VINOD RAJENDRAN</strong>
+            Interested in DevOps, cloud infrastructure,
+            automation, containers or Kubernetes?
         </p>
 
-        <p>
-            DevOps & Cloud Engineer
-        </p>
+        <div class="contact-actions">
 
-        <p>
-            AWS • Terraform • Docker • Kubernetes • Linux
-        </p>
+            <a
+                href="https://github.com/rvinodrajendran"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button-primary"
+            >
+                GitHub ↗
+            </a>
 
-        <br>
+            <a
+                href="https://www.linkedin.com/in/vinodrajendran/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button-outline"
+            >
+                LinkedIn ↗
+            </a>
 
-        <p>
-            Building infrastructure.
-            Automating everything possible.
-        </p>
+        </div>
 
-    </footer>
+    </div>
 
+    <div class="contact-mark">
+        VR<span>.</span>
+    </div>
 
-    <script src="script.js"></script>
+</section>
+```
+
+</main>
+
+<footer class="site-footer">
+
+```
+<div>
+    <strong>VINOD RAJENDRAN</strong>
+    <span>DEVOPS & CLOUD ENGINEER</span>
+</div>
+
+<div>
+    AWS · TERRAFORM · DOCKER · KUBERNETES · LINUX
+</div>
+
+<div>
+    © <span id="year"></span>
+</div>
+```
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
-```
 

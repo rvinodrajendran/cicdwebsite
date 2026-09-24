@@ -1,54 +1,29 @@
-```javascript
-/*
-    Vinod Rajendran
-    DevOps & Cloud Engineer Portfolio
+document.addEventListener("DOMContentLoaded", () => {
 
-    Small interactions for the portfolio.
-*/
+```
+/* YEAR */
 
+const year = document.getElementById("year");
 
-// =========================================
-// NAVBAR SCROLL EFFECT
-// =========================================
-
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 30) {
-
-        navbar.style.background =
-            "rgba(5,5,10,0.92)";
-
-    } else {
-
-        navbar.style.background =
-            "rgba(5,5,10,0.72)";
-
-    }
-
-});
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
 
 
-// =========================================
-// SIMPLE REVEAL ANIMATION
-// =========================================
+/* SCROLL REVEAL */
 
-const revealElements = document.querySelectorAll(
-    ".skill-card, .project-card, .timeline-item, .architecture-node, .stat-card"
-);
+const revealElements = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(
-    (entries) => {
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
 
         entries.forEach((entry) => {
 
             if (entry.isIntersecting) {
 
-                entry.target.style.opacity = "1";
+                entry.target.classList.add("visible");
 
-                entry.target.style.transform =
-                    "translateY(0)";
+                observer.unobserve(entry.target);
 
             }
 
@@ -60,18 +35,132 @@ const observer = new IntersectionObserver(
     }
 );
 
-
 revealElements.forEach((element) => {
+    revealObserver.observe(element);
+});
 
-    element.style.opacity = "0";
 
-    element.style.transform =
-        "translateY(25px)";
+/* CURSOR SPOTLIGHT */
 
-    element.style.transition =
-        "opacity 0.7s ease, transform 0.7s ease";
+const cursorGlow = document.querySelector(".cursor-glow");
 
-    observer.observe(element);
+if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
+
+    window.addEventListener("mousemove", (event) => {
+
+        cursorGlow.style.left = `${event.clientX}px`;
+        cursorGlow.style.top = `${event.clientY}px`;
+
+    });
+
+}
+
+
+/* HEADER BACKGROUND */
+
+const header = document.querySelector(".site-header");
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (!header) {
+            return;
+        }
+
+        if (window.scrollY > 40) {
+
+            header.style.background =
+                "rgba(5, 5, 5, 0.92)";
+
+        } else {
+
+            header.style.background =
+                "rgba(5, 5, 5, 0.78)";
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+/* PROJECT VISUAL PARALLAX */
+
+const projectVisuals =
+    document.querySelectorAll(".project-visual");
+
+if (window.matchMedia("(pointer: fine)").matches) {
+
+    projectVisuals.forEach((visual) => {
+
+        visual.addEventListener("mousemove", (event) => {
+
+            const rect = visual.getBoundingClientRect();
+
+            const x =
+                (event.clientX - rect.left) /
+                rect.width -
+                0.5;
+
+            const y =
+                (event.clientY - rect.top) /
+                rect.height -
+                0.5;
+
+            visual.style.transform =
+                `perspective(900px)
+                 rotateY(${x * 4}deg)
+                 rotateX(${y * -4}deg)
+                 translateY(-6px)`;
+
+        });
+
+        visual.addEventListener("mouseleave", () => {
+
+            visual.style.transform =
+                "perspective(900px) rotateY(0deg) rotateX(0deg) translateY(0)";
+
+        });
+
+    });
+
+}
+
+
+/* SMOOTH ANCHOR OFFSET */
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+
+    link.addEventListener("click", (event) => {
+
+        const targetId =
+            link.getAttribute("href");
+
+        const target =
+            document.querySelector(targetId);
+
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+
+        const headerHeight = 80;
+
+        const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth"
+        });
+
+    });
 
 });
 ```
+
+});
