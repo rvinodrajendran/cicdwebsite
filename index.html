@@ -1,0 +1,860 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CloudForge | DevOps CI/CD Platform</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050816;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.18), transparent 65%);
+            top: -250px;
+            left: -200px;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.14), transparent 65%);
+            bottom: -300px;
+            right: -200px;
+            z-index: -2;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(18px);
+            background: rgba(5, 8, 22, 0.72);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8bfd3;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 25px 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 950px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 50px;
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            color: #c4b5fd;
+            font-size: 13px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 9vw, 105px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #ec4899,
+                #06b6d4,
+                #8b5cf6
+            );
+            background-size: 300%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientMove 7s infinite linear;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #9da5bd;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 27px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed, #ec4899);
+            color: white;
+            box-shadow: 0 10px 40px rgba(139,92,246,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 50px rgba(236,72,153,0.4);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-4px);
+        }
+
+        /* =========================
+           PIPELINE
+        ========================== */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 110px 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: #8b5cf6;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 48px;
+            margin-top: 12px;
+        }
+
+        .section-title p {
+            color: #8f98af;
+            margin-top: 15px;
+        }
+
+        .pipeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .pipeline-card {
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.035);
+            border-radius: 20px;
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pipeline-card::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 0;
+            left: -100%;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            transition: 0.4s;
+        }
+
+        .pipeline-card:hover::before {
+            left: 0;
+        }
+
+        .pipeline-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139,92,246,0.4);
+        }
+
+        .pipeline-icon {
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+
+        .pipeline-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .pipeline-card p {
+            color: #858da3;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           ARCHITECTURE
+        ========================== */
+
+        .architecture {
+            border: 1px solid rgba(255,255,255,0.08);
+            background: linear-gradient(
+                135deg,
+                rgba(139,92,246,0.07),
+                rgba(236,72,153,0.04)
+            );
+            border-radius: 30px;
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        .architecture-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .architecture-node {
+            min-width: 150px;
+            padding: 25px 20px;
+            border-radius: 18px;
+            background: #0b1024;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .architecture-node strong {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .arrow {
+            font-size: 25px;
+            color: #8b5cf6;
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .stat h3 {
+            font-size: 42px;
+            background: linear-gradient(90deg,#8b5cf6,#ec4899);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .stat p {
+            color: #858da3;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           FEATURE CARDS
+        ========================== */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            padding: 35px;
+            min-height: 230px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            transition: 0.35s;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+            background: rgba(139,92,246,0.07);
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            color: #8992aa;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            text-align: center;
+            padding: 100px 30px;
+            border-radius: 30px;
+            background:
+                radial-gradient(circle at top left, rgba(139,92,246,0.3), transparent 40%),
+                radial-gradient(circle at bottom right, rgba(236,72,153,0.25), transparent 40%),
+                #0a0f25;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cta h2 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #9ba4bb;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 35px;
+            text-align: center;
+            color: #6f778d;
+            font-size: 14px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .pipeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .pipeline,
+            .features,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 36px;
+            }
+
+            .cta h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                Cloud<span>Forge</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#pipeline">Pipeline</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#deploy">Deploy</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ⚡ NEXT-GENERATION CI/CD
+            </div>
+
+            <h1>
+                Build.
+                <span class="gradient-text">Ship.</span>
+                Scale.
+            </h1>
+
+            <p>
+                A modern automated deployment platform powered by
+                GitHub, GitHub Actions, Docker and AWS.
+                Push your code and let the pipeline do the rest.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#pipeline" class="btn btn-primary">
+                    Explore Pipeline →
+                </a>
+
+                <a href="#architecture" class="btn btn-secondary">
+                    View Architecture
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PIPELINE -->
+
+    <section id="pipeline">
+
+        <div class="section-title">
+
+            <span>THE PIPELINE</span>
+
+            <h2>From Commit to Production</h2>
+
+            <p>
+                Every code change moves through an automated delivery pipeline.
+            </p>
+
+        </div>
+
+        <div class="pipeline">
+
+            <div class="pipeline-card">
+                <div class="pipeline-icon">💻</div>
+                <h3>Code</h3>
+                <p>
+                    Developers create and modify application code.
+                </p>
+            </div>
+
+            <div class="pipeline-card">
+                <div class="pipeline-icon">🐙</div>
+                <h3>GitHub</h3>
+                <p>
+                    Source code is stored and version controlled.
+                </p>
+            </div>
+
+            <div class="pipeline-card">
+                <div class="pipeline-icon">⚙️</div>
+                <h3>Actions</h3>
+                <p>
+                    GitHub Actions automatically starts the workflow.
+                </p>
+            </div>
+
+            <div class="pipeline-card">
+                <div class="pipeline-icon">🐳</div>
+                <h3>Docker</h3>
+                <p>
+                    The application is packaged into a portable container.
+                </p>
+            </div>
+
+            <div class="pipeline-card">
+                <div class="pipeline-icon">☁️</div>
+                <h3>AWS</h3>
+                <p>
+                    The latest version is deployed to an EC2 server.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ARCHITECTURE -->
+
+    <section id="architecture">
+
+        <div class="section-title">
+
+            <span>ARCHITECTURE</span>
+
+            <h2>Simple. Automated. Powerful.</h2>
+
+            <p>
+                A complete path from your laptop to a live website.
+            </p>
+
+        </div>
+
+        <div class="architecture">
+
+            <div class="architecture-flow">
+
+                <div class="architecture-node">
+                    💻
+                    <strong>Developer</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    🐙
+                    <strong>GitHub</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    ⚙️
+                    <strong>GitHub Actions</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    🐳
+                    <strong>Docker</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    ☁️
+                    <strong>AWS EC2</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    🌎
+                    <strong>Live Website</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Automated Deployment</p>
+            </div>
+
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>Application Availability</p>
+            </div>
+
+            <div class="stat">
+                <h3>∞</h3>
+                <p>Deployments</p>
+            </div>
+
+            <div class="stat">
+                <h3>1</h3>
+                <p>Git Push Required</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section id="features">
+
+        <div class="section-title">
+
+            <span>CAPABILITIES</span>
+
+            <h2>Everything Works Together</h2>
+
+            <p>
+                Modern DevOps technologies working as one system.
+            </p>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">🚀</div>
+
+                <h3>Continuous Deployment</h3>
+
+                <p>
+                    Push a change to GitHub and automatically
+                    deliver the new version to your server.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="feature-icon">🔒</div>
+
+                <h3>Version Controlled</h3>
+
+                <p>
+                    Every change is tracked through Git,
+                    making deployments traceable and repeatable.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="feature-icon">🐳</div>
+
+                <h3>Containerized</h3>
+
+                <p>
+                    Docker packages the application and its
+                    environment into a consistent container.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="feature-icon">⚡</div>
+
+                <h3>Fast Releases</h3>
+
+                <p>
+                    Reduce manual deployment work and
+                    release changes quickly.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="feature-icon">☁️</div>
+
+                <h3>Cloud Ready</h3>
+
+                <p>
+                    Designed to run on AWS infrastructure
+                    and scale toward larger environments.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="feature-icon">🧠</div>
+
+                <h3>DevOps Learning</h3>
+
+                <p>
+                    A practical project demonstrating how
+                    development and infrastructure work together.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section id="deploy">
+
+        <div class="cta">
+
+            <h2>
+                Ready to Deploy?
+            </h2>
+
+            <p>
+                Write code. Commit it. Push it.
+                Watch the pipeline transform your change
+                into a live production deployment.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#pipeline" class="btn btn-primary">
+                    Start the Pipeline 🚀
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 CloudForge • Built with GitHub, Docker, GitHub Actions & AWS
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
+
